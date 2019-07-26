@@ -61,7 +61,7 @@ window.oldVersion = [
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
 <!-- Title -->
-<title>Andy&#39;s Horizon</title>
+<title>XSS漏洞复习研究~ | Andy&#39;s Horizon</title>
 
 <!-- favicon -->
 <!-- Favicons -->
@@ -175,6 +175,10 @@ window.oldVersion = [
 
     <!-- Prettify Theme -->
     
+    
+        <link rel="stylesheet" href="/css/highlight/github.min.css">
+    
+
 
 
     
@@ -201,12 +205,12 @@ window.oldVersion = [
 
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="Andy&#39;s Horizon">
+    <meta property="og:title" content="XSS漏洞复习研究~ | Andy&#39;s Horizon">
 <meta property="og:site_name" content="Andy&#39;s Horizon">
 
 
 
-<meta property="og:url" content="http://yoursite.com/">
+<meta property="og:url" content="http://yoursite.com/2019/07/26/XSS漏洞复习研究/">
 <meta property="og:image" content="http://yoursite.com/img/favicon.ico">
 
 <meta property="og:description" content="�Զ��� ��Ϣ��ȫ ��һ���˵Ĺ���">
@@ -214,7 +218,11 @@ window.oldVersion = [
 <meta name="twitter:card" content="summary">
 
 
-    <meta property="og:type" content="blog">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-07-26T13:57:50.000Z">
+    <meta property="article:modified_time" content="2019-07-26T13:57:50.000Z">
+    <meta property="article:author" content="Andy Z">
+    <meta property="og:article:tag" content> 
 
 
 
@@ -231,14 +239,32 @@ window.oldVersion = [
 
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/">
+    <link rel="canonical" href="http://yoursite.com/2019/07/26/XSS漏洞复习研究/">
 
     <!-- ### Structured Data ### -->
     
+
+
+
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "@type": "Blog",
+    "url": "http://yoursite.com/2019/07/26/XSS漏洞复习研究/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/07/26/XSS漏洞复习研究/"
+    },
+    "headline": "XSS漏洞复习研究~ | Andy&#39;s Horizon",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/favicon.ico"
+    },
+    
+    "datePublished": "2019-07-26T13:57:50.000Z",
+    "dateModified": "2019-07-26T13:57:50.917Z",
     "author": {
         "@type": "Person",
         "name": "Andy Z",
@@ -256,16 +282,6 @@ window.oldVersion = [
             "url": "http://yoursite.com/img/favicon.ico"
         }
     },
-    "url": "http://yoursite.com",
-    "logo": "http://yoursite.com/img/favicon.ico",
-    "image": {
-        "@type": "ImageObject",
-        "url": "http://yoursite.com/img/favicon.ico"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "http://yoursite.com"
-    },
     
     "potentialAction": {
         "@type": "SearchAction",
@@ -277,8 +293,6 @@ window.oldVersion = [
     "description": "�Զ��� ��Ϣ��ȫ ��һ���˵Ĺ���"
 }
 </script>
-
-
 
 
 
@@ -357,28 +371,28 @@ window.oldVersion = [
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=XSS漏洞复习研究~" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Andy's Horizon&title=&summary=�Զ��� ��Ϣ��ȫ ��һ���˵Ĺ���&pics=http://yoursite.com/img/favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Andy's Horizon&title=XSS漏洞复习研究~&summary=�Զ��� ��Ϣ��ȫ ��һ���˵Ĺ���&pics=http://yoursite.com/img/favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=XSS漏洞复习研究~" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAAAAABx8Un7AAABLklEQVR42u3ZwbLCMAiF4bz/S+u2dsLJIW2hzvzZePV28i1ECGR8GtYABQXdQodY5///bCCem+0DWotOv/Tjw8Hfx/fWPqCl6Cww1ObqNdoH9B2okwBA/xfNPA/aj0aJOgooldgvVxnQy6j7o3cT/S2nQdBtdNn0LJLEI10b6CVUHcCmwWAW91RGAr0VPScJuyAnPwftRRXsDj+mhR60BY2CIkoIKhjtQAK9FV0lfGfD1XAStB6NDtBu0rCHl6AlqHu4zjZbVsIHfRTNXCBkhpag9ajTCDmFXTVRoLWoO+hwD9VyaAlagu5exDvDaNA+1Amg1ZDZCjLQUtS9tM0UiWXXBtqCqkTuNMmg70StyztR0EF7UCfh71zcgvagzvDCHXbJoTVoCVq5QEFBU+sL0YSSIugE1CwAAAAASUVORK5CYII=" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB2klEQVR42u3b226DMBCEYd7/pZOrShFiZ2ZDKpn1z03alOAv0uLD4B6vBY8DFChQoC5QhzjO5/z9/Pmq3rv6XbYDagzqsuguGq3OOf/96vyoHVCjUOfCS95Pvkh6PVB7oapidTdDhQQFKi3Y6hxQe6LUYOsmZ9UEr2r89iwB1PIo1egvX3+2mgG1NMqGDkWBuhviX1MXUEujVCFWAUfVUXYLHdRMVCfYcIOxA9nrgBqBqgbhtLjVTZEsSkHNQ7lQvtN5psBokgfqsSi1SEwLNnmwpAoc1CyUCrRsZ3cDFN99oB6Lqj4gJ/qNzyRBGqgZqDQoSx4gqY0S0UNuUCNQbgKWhrTpIlV2wKDGoFyA6gZSF3Sk1wA1A9UJYjsbCNONPaDmodQCwQUdarDtdrSg5qFUOOaKWwUXyYIC1CxUd+HgFrHJIB1t6gL1aJQLOVxAm4Yk9iEnqFEotzh1hZx+EVD7oNIi7dwQbkAGNROVbBT89mF1ggU1D5VsNFaAJByLQ1lQY1Bqw2BnYdHZ4PX1BhxQj0G5ht0E0IX6SecKah9UGXId/h91WptaQW2Jam2oCQNYUDNRKrhINjqknaoMVECNQaUhRBKCJJ3s7dUMqKVRKx2gQIEC9XG8AYRTUWCkvUT7AAAAAElFTkSuQmCC" alr="QRCode">
         </li>
         
 
@@ -389,130 +403,168 @@ window.oldVersion = [
 </nav>
 </header>
 
-            <div class="container">
-    <div class="main-container">
-        <main>
-            <div class="post-stream-container">
-                <!-- # Post List # -->
-                
-                    
-                        
-    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
-
-<article class="post-entry container px-0 card">
-        <div class="columns col-gapless">
             
-                <div class="column col-12">
-                    
-    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/07/26/XSS漏洞复习研究/" rel="bookmark">XSS漏洞复习研究~</a></h2>
-
-
-<p class="mb-0 card-body">
+    <!-- ## Post ## -->
     
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
         
-    <a href="/2019/07/26/XSS漏洞复习研究/">Read more</a>
-</p>
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">XSS漏洞复习研究~</h1>
 
 
 
 
-    <!-- Date & Category -->
-    <div class="card-footer post-entry-info text-gray">
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
         <img class="author-thumb lazyload" data-src="/img/name.jpg" src="/img/suka-lazyload.gif" alt="Andy Z's Avatar">
-        <time>2019-07-26</time>
+        <span>2019-07-26</span>
         
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=XSS漏洞复习研究~&url=http://yoursite.com/2019/07/26/XSS漏洞复习研究/&pic=http://yoursite.com/img/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=XSS漏洞复习研究~&url=http://yoursite.com/2019/07/26/XSS漏洞复习研究/&via=Andy Z" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/07/26/XSS漏洞复习研究/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/07/26/XSS漏洞复习研究/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/07/26/XSS漏洞复习研究/&title=Andy's Horizon" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Andy's Horizon&title=Andy's Horizon&summary=�Զ��� ��Ϣ��ȫ ��һ���˵Ĺ���&pics=http://yoursite.com/img/favicon.ico&url=http://yoursite.com/2019/07/26/XSS漏洞复习研究/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/07/26/XSS漏洞复习研究/&text=Andy's Horizon" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB2klEQVR42u3b226DMBCEYd7/pZOrShFiZ2ZDKpn1z03alOAv0uLD4B6vBY8DFChQoC5QhzjO5/z9/Pmq3rv6XbYDagzqsuguGq3OOf/96vyoHVCjUOfCS95Pvkh6PVB7oapidTdDhQQFKi3Y6hxQe6LUYOsmZ9UEr2r89iwB1PIo1egvX3+2mgG1NMqGDkWBuhviX1MXUEujVCFWAUfVUXYLHdRMVCfYcIOxA9nrgBqBqgbhtLjVTZEsSkHNQ7lQvtN5psBokgfqsSi1SEwLNnmwpAoc1CyUCrRsZ3cDFN99oB6Lqj4gJ/qNzyRBGqgZqDQoSx4gqY0S0UNuUCNQbgKWhrTpIlV2wKDGoFyA6gZSF3Sk1wA1A9UJYjsbCNONPaDmodQCwQUdarDtdrSg5qFUOOaKWwUXyYIC1CxUd+HgFrHJIB1t6gL1aJQLOVxAm4Yk9iEnqFEotzh1hZx+EVD7oNIi7dwQbkAGNROVbBT89mF1ggU1D5VsNFaAJByLQ1lQY1Bqw2BnYdHZ4PX1BhxQj0G5ht0E0IX6SecKah9UGXId/h91WptaQW2Jam2oCQNYUDNRKrhINjqknaoMVECNQaUhRBKCJJ3s7dUMqKVRKx2gQIEC9XG8AYRTUWCkvUT7AAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
         
     </div>
-
+</div>
                 </div>
-            
-        </div>
-</article>
-
-                    
-                
+                <div class="card-body">
                     
                         
-    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
-
-<article class="post-entry container px-0 card">
-        <div class="columns col-gapless">
-            
-                <div class="column col-12">
                     
-    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/07/26/Labview字符串函数/" rel="bookmark">Labview字符串函数</a></h2>
-
-
-<p class="mb-0 card-body">
-    
-        #“        之前在某个比赛项目中了解到了Labview，然后因为时间原因，没学得很好，决定闲下来就一章一章看着学。        吐槽一句，Labview的介绍书籍很水，没什么实...
-    <a href="/2019/07/26/Labview字符串函数/">Read more</a>
-</p>
-
-
-
-
-    <!-- Date & Category -->
-    <div class="card-footer post-entry-info text-gray">
-        <img class="author-thumb lazyload" data-src="/img/name.jpg" src="/img/suka-lazyload.gif" alt="Andy Z's Avatar">
-        <time>2019-07-26</time>
-        
-        
-    </div>
-
-                </div>
-            
-        </div>
-</article>
-
-                    
-                
-                    
+                    <article id="post-content">
                         
-    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
-
-<article class="post-entry container px-0 card">
-        <div class="columns col-gapless">
-            
-                <div class="column col-12">
+                    </article>
                     
-    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/07/25/关于本站/" rel="bookmark">关于本站</a></h2>
 
 
-<p class="mb-0 card-body">
-    
-        本站基于hexo+github生成
-主要记录一些关于学习过程中出现的小问题
-现在还不太会用hexo，慢慢来吧
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-07-26");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
 
-    <a href="/2019/07/25/关于本站/">Read more</a>
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-07-26T13:57:50.000Z" itemprop="datePublished">2019-07-26</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
 </p>
 
-
-
-
-    <!-- Date & Category -->
-    <div class="card-footer post-entry-info text-gray">
-        <img class="author-thumb lazyload" data-src="/img/name.jpg" src="/img/suka-lazyload.gif" alt="Andy Z's Avatar">
-        <time>2019-07-25</time>
-        
-            <span class="suka-devide-dot"></span>
-            <a class="category-link" href="/categories/杂/">杂</a>
-        
-        
-    </div>
-
                 </div>
-            
-        </div>
-</article>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
 
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/07/26/Labview字符串函数/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Labview字符串函数</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
                     
                 
             </div>
-        </main>
-        
-
+        </div>
     </div>
 </div>
 
