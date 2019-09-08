@@ -80,7 +80,8 @@ window.oldVersion = [
 <meta name="format-detection" content="telephone=no">
 
 <!-- Description -->
-<meta name="description" content="1.2.1编程时注意定义的变量类型例如void fun(int a, int b, long *c){    int a1,a2,b1,b2;    a1=a%10;   ...">
+<meta name="description" content="*1.2.1 *编程时注意定义的变量类型例如
+">
 
 <!-- Keywords -->
 <meta name="keywords" content=", C, 国家二级计算机考试">
@@ -213,7 +214,8 @@ window.oldVersion = [
 <meta property="og:url" content="http://yoursite.com/2019/09/01/C语言操作题/">
 <meta property="og:image" content="http://yoursite.com/img/favicon.ico">
 
-<meta property="og:description" content="1.2.1编程时注意定义的变量类型例如void fun(int a, int b, long *c){    int a1,a2,b1,b2;    a1=a%10;   ...">
+<meta property="og:description" content="*1.2.1 *编程时注意定义的变量类型例如
+">
 
 <meta name="twitter:card" content="summary">
 
@@ -264,7 +266,7 @@ window.oldVersion = [
     },
     
     "datePublished": "2019-09-01T14:08:55.000Z",
-    "dateModified": "2019-09-01T14:11:25.296Z",
+    "dateModified": "2019-09-07T13:59:11.437Z",
     "author": {
         "@type": "Person",
         "name": "Andy Z",
@@ -290,7 +292,8 @@ window.oldVersion = [
     },
     
     "keywords": ", C, 国家二级计算机考试",
-    "description": "1.2.1编程时注意定义的变量类型例如void fun(int a, int b, long *c){    int a1,a2,b1,b2;    a1=a%10;   ..."
+    "description": "*1.2.1 *编程时注意定义的变量类型例如
+"
 }
 </script>
 
@@ -513,17 +516,50 @@ window.oldVersion = [
                         
                     
                     <article id="post-content">
-                        <p>1.2.1<br>编程时注意定义的变量类型<br>例如<br>void fun(int a, int b, long *c)<br>{<br>    int a1,a2,b1,b2;<br>    a1=a%10;<br>    a2=(a/10)%10;<br>    b1=b%10;<br>    b2=(b/10)%10;</p>
-<pre><code>*c=a1*1000+a2*10+b2+b1*100;</code></pre><p>}<br>其中勿将*c赋值变成了c赋值成地址了。</p>
-<p>2.3.1<br>编程时的自定义函数如果要求返回要用return<br>变换类型写法必须严格，例如（int）x<br>四舍五入灵活写法：<br>double fun(double x)<br>{<br>  x=(int)(x<em>100+0.5);  /*移动小数点</em>/<br>  x/=100;  /<em>舍掉小数点后两位</em>/<br>  return x;<br>  }<br>加0.5完事</p>
+                        <p>*<em>1.2.1 *</em><br>编程时注意定义的变量类型<br>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void fun(int a, int b, long *c)</span><br><span class="line">&#123;</span><br><span class="line">	int a1,a2,b1,b2;</span><br><span class="line">	a1=a%10;</span><br><span class="line">	a2=(a/10)%10;</span><br><span class="line">	b1=b%10;</span><br><span class="line">	b2=(b/10)%10;</span><br><span class="line"></span><br><span class="line">	*c=a1*1000+a2*10+b2+b1*100;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>其中勿将*c赋值变成了c赋值成地址了。</p>
+<p><strong>2.3.1</strong><br>编程时的自定义函数如果要求返回要用return<br>变换类型写法必须严格，例如（int）x<br>四舍五入灵活写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">double fun(double x)</span><br><span class="line">&#123;</span><br><span class="line">  x=(int)(x*100+0.5);  /*移动小数点*/</span><br><span class="line">  x/=100;  /*舍掉小数点后两位*/</span><br><span class="line">  return x;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>加0.5完事</p>
+<p><strong>2.4.2</strong><br>编程时注意strlen的灵活使用，以及其它自定义字符串函数用法。<br>例子：函数fun的功能是：将s所指字符串中下标为偶数同时ASCII值为奇数的字符删除，s所指串中剩余的字符形成的新串放在t所指的数组中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void fun(char *s, char t[])</span><br><span class="line">&#123;</span><br><span class="line">int i, j=0;</span><br><span class="line">for(i=0; i&lt;strlen(s); i++)</span><br><span class="line">  if(!((i%2)==0&amp;&amp;(s[i]%2)))t[j++]=s[i];</span><br><span class="line">t[j]=&apos;\0&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还有注意上面一种写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int i，j=0;</span><br></pre></td></tr></table></figure>
+
+<p>值得注意的是其中的i并未被初始化。</p>
+<p><strong>2.4.3</strong><br>if语句中判断是否相等==不要和赋值语句中的=混淆</p>
+<p><strong>2.5.1</strong><br>switch语句的正确写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">switch(expression)&#123;</span><br><span class="line">    case constant-expression  :</span><br><span class="line">       statement(s);</span><br><span class="line">       break; /* 可选的 */</span><br><span class="line">    case constant-expression  :</span><br><span class="line">       statement(s);</span><br><span class="line">       break; /* 可选的 */</span><br><span class="line">  </span><br><span class="line">    /* 您可以有任意数量的 case 语句 */</span><br><span class="line">    default : /* 可选的 */</span><br><span class="line">       statement(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>尤其注意</strong>switch(表达式)后是加左大括号，而非分号。<br>若case 1和case 2结果一致，应当使用以下规范写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">case 1: return 1; case 2:return 1;</span><br></pre></td></tr></table></figure>
+
+<p>等价写法示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">case 1: case 2:return 1;//警告：考试可能不允许，但这编译是通过的</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.5.2</strong><br>switch 语句中的 expression 是一个常量表达式，必须是一个整型或枚举类型。<br>有时候可以用if过度，或者强行处理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//（2）给出学生的百分制成绩，要求输出成绩等级&apos;A&apos;、&apos;B&apos;、&apos;C&apos;、&apos;D&apos;、&apos;E&apos;。</span><br><span class="line">//90分以上为&apos;A&apos;，80～89分为&apos;B&apos;，70～79分为&apos;C&apos;，60～69分为&apos;D&apos;，60分以下为&apos;E&apos;。</span><br><span class="line">char fun(float score)</span><br><span class="line">&#123;</span><br><span class="line"> char grade;</span><br><span class="line">switch((int)(score/10))&#123;						/*按照分数算出等级*/</span><br><span class="line">		case 10:</span><br><span class="line">		case 9:grade=&apos;A&apos;;break;</span><br><span class="line">		case 8:grade=&apos;B&apos;;break;</span><br><span class="line">		case 7:grade=&apos;C&apos;;break;</span><br><span class="line">		case 6:grade=&apos;D&apos;;break;</span><br><span class="line">		default:grade=&apos;E&apos;;break;</span><br><span class="line">	&#125;</span><br><span class="line">  return grade;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.5.3</strong><br>判断闰年</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">year%400==0||(year%4==0&amp;&amp;year%100!=0</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.6.1</strong><br>发现一个历史遗留问题，因为VS2010的c编译器只支持C89标准，变量需要放到函数体的前面声明。</p>
+<p><strong>2.6.2</strong><br>C++ 允许使用速记符号来声明无符号短整数或无符号长整数。您可以不写 int，只写单词 unsigned、short 或 unsigned、long，int 是隐含的。例如，下面的两个语句都声明了无符号整型变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unsigned x;</span><br><span class="line">unsigned int y;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.9.3</strong><br>判断是否为素数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(i=2;i&lt;=k;i++)</span><br><span class="line">  if(n%i==0)</span><br><span class="line">       break;</span><br></pre></td></tr></table></figure>
                     </article>
                     
 
 
     <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
     <script>
-        var dateUpdate = Date.parse("2019-09-01");
+        var dateUpdate = Date.parse("2019-09-07");
         var nowDate = new Date();
         var a = nowDate.getTime();
         var b = a - dateUpdate;
@@ -537,6 +573,8 @@ window.oldVersion = [
 
 
 <p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-09-01T14:08:55.000Z" itemprop="datePublished">2019-09-01</time>
+
+    , Updated at&nbsp;<time datetime="2019-09-07T13:59:11.437Z" itemprop="dateModified">2019-09-07</time>
 
 </p>
 <p class="post-footer-info mb-0 pt-2">
