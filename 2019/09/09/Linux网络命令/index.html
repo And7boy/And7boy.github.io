@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+<html >
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.3
+    -->
+    <script>
+window.lsVersion = "1.3.3",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0","1.3.2"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>Linux网络命令 | Andy&#39;s Horizon</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="icon" type="image/ico" href="/img/favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="网络命令">
+
+<!-- Keywords -->
+<meta name="keywords" content=", Linux, 网络命令">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/github.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Andy&#39;s Horizon">
+<meta name="msapplication-starturl" content="http://yoursite.com">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Andy&#39;s Horizon">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux网络命令 | Andy&#39;s Horizon">
+<meta property="og:site_name" content="Andy&#39;s Horizon">
+
+
+
+<meta property="og:url" content="http://yoursite.com/2019/09/09/Linux网络命令/">
+<meta property="og:image" content="http://yoursite.com/img/favicon.ico">
+
+<meta property="og:description" content="网络命令">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-09-09T12:49:32.000Z">
+    <meta property="article:modified_time" content="2019-09-09T12:49:32.000Z">
+    <meta property="article:author" content="Andy Z">
+    <meta property="og:article:tag" content=", Linux, 网络命令"> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/09/09/Linux网络命令/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/09/09/Linux网络命令/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/09/09/Linux网络命令/"
+    },
+    "headline": "Linux网络命令 | Andy&#39;s Horizon",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/favicon.ico"
+    },
+    
+    "datePublished": "2019-09-09T12:49:32.000Z",
+    "dateModified": "2019-09-09T14:02:17.432Z",
+    "author": {
+        "@type": "Person",
+        "name": "Andy Z",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/name.jpg"
+        },
+        "description": "呼叫塔台，呼叫塔台......算了我起飞了，下次再叫你"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Andy&#39;s Horizon",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": ", Linux, 网络命令",
+    "description": "网络命令"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Andy&#39;s Horizon</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                呼叫塔台，呼叫塔台......算了我起飞了，下次再叫你
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+        <a href="/about" class="navbar-link">About</a>
+    
+        <a href="/link" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=Andy's Horizon&url=http://yoursite.com&pic=http://yoursite.com/img/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=Andy's Horizon&url=http://yoursite.com&via=Andy Z" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Linux网络命令" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Andy's Horizon&title=Linux网络命令&summary=�Զ�����һ���˵Ĺ���&pics=http://yoursite.com/img/favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Linux网络命令" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB7ElEQVR42u2a2woDIQxE9/9/un0qLMVkTqwFzY4vvVE9CzGXSa7XhusylKEMZagB1JWs0e+f777/f/88PFCcY6heUNEmI4ARyPeho33VOYbqBxVtOtosMlTycOmlMdQjoLLNs0PVJTHUc6FosA4d4r9un6G2h0oDZWL81JEuzRIMtT2UMuZVr0urGUNtC4XFB1FAEENerroYakuokVgRGmLgIFVySJI9Q/WBUsVlJpRFSV8EqoK3oXpAKYGVFA6ZAJIZuMwSDHUkVBXuV+PPHLGhekApkZ4K+9lDqmTRUL2gsKAFhLIsCCtYQ/WCos4vS9SUk1VFq6H6QNGhCCqwkqRvquNgqOOgiBNUhk4cbsnQDXUkFBG4sgEIEoSJ+G+onlAkwc8EsihAZ4WooXpDUfFeFZo0EURNSEMdCyUFLdjwRo2h6L2hWkCRBIyI+eQB5IUyVBso0pBUjcqKaFbqthvqWCjk3EQBqprcqoFpqD5QZFhZFaozA6ql6UVDHQNFilIi4tNGJB7qMtSxULMDzdllUINdYRPAUG2gKsVCRewvD10YqhWUSvxnBgfJgLShngtFvqsOgaFi1FDtoIiDVY2lsrhvqBZQROxXhUJFfEOGbqhjoUiQrYgflQbndDVjqG2hdlqGMpShDHVbb3KfMI8FjmA9AAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux网络命令</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/name.jpg" src="/img/suka-lazyload.gif" alt="Andy Z's Avatar">
+        <span>2019-09-09</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/Linux/">Linux</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux网络命令&url=http://yoursite.com/2019/09/09/Linux网络命令/&pic=http://yoursite.com/img/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux网络命令&url=http://yoursite.com/2019/09/09/Linux网络命令/&via=Andy Z" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/09/Linux网络命令/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/09/09/Linux网络命令/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/09/09/Linux网络命令/&title=Andy's Horizon" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Andy's Horizon&title=Andy's Horizon&summary=�Զ�����һ���˵Ĺ���&pics=http://yoursite.com/img/favicon.ico&url=http://yoursite.com/2019/09/09/Linux网络命令/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/09/09/Linux网络命令/&text=Andy's Horizon" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB7ElEQVR42u2a2woDIQxE9/9/un0qLMVkTqwFzY4vvVE9CzGXSa7XhusylKEMZagB1JWs0e+f777/f/88PFCcY6heUNEmI4ARyPeho33VOYbqBxVtOtosMlTycOmlMdQjoLLNs0PVJTHUc6FosA4d4r9un6G2h0oDZWL81JEuzRIMtT2UMuZVr0urGUNtC4XFB1FAEENerroYakuokVgRGmLgIFVySJI9Q/WBUsVlJpRFSV8EqoK3oXpAKYGVFA6ZAJIZuMwSDHUkVBXuV+PPHLGhekApkZ4K+9lDqmTRUL2gsKAFhLIsCCtYQ/WCos4vS9SUk1VFq6H6QNGhCCqwkqRvquNgqOOgiBNUhk4cbsnQDXUkFBG4sgEIEoSJ+G+onlAkwc8EsihAZ4WooXpDUfFeFZo0EURNSEMdCyUFLdjwRo2h6L2hWkCRBIyI+eQB5IUyVBso0pBUjcqKaFbqthvqWCjk3EQBqprcqoFpqD5QZFhZFaozA6ql6UVDHQNFilIi4tNGJB7qMtSxULMDzdllUINdYRPAUG2gKsVCRewvD10YqhWUSvxnBgfJgLShngtFvqsOgaFi1FDtoIiDVY2lsrhvqBZQROxXhUJFfEOGbqhjoUiQrYgflQbndDVjqG2hdlqGMpShDHVbb3KfMI8FjmA9AAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#网络命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">网络命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#write-给用户发信息"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">write 给用户发信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#wall发广播信息"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">wall发广播信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ping测试网络连通性"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">ping测试网络连通性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ifconfig查看和设置网卡信息"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">ifconfig查看和设置网卡信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mail查看发送电子邮件"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">mail查看发送电子邮件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#last列出目前与过去登入系统的用户信息"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">last列出目前与过去登入系统的用户信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#lastlog检查特定用户上次登陆的时间"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">lastlog检查特定用户上次登陆的时间</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#traceroute显示数据包到主机间的路径"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">traceroute显示数据包到主机间的路径</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#netstat显示网络相关信息"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">netstat显示网络相关信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#setup配置网络（redhat特有）"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">setup配置网络（redhat特有）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#挂载命令"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">挂载命令</span></a></li></ol></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <h1 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h1><h2 id="write-给用户发信息"><a href="#write-给用户发信息" class="headerlink" title="write 给用户发信息"></a>write 给用户发信息</h2><p>指令名称：write<br>所在路径：/usr/bin/write<br>执行权限：所有用户<br>语法：write &lt;用户名&gt;<br>功能描述：给用户发信息，以Ctrl+D保存结束<br><strong>注意</strong><br>delete可以删除文字，以Ctrl+D保存结束。</p>
+<h2 id="wall发广播信息"><a href="#wall发广播信息" class="headerlink" title="wall发广播信息"></a>wall发广播信息</h2><p>指令名称：wall<br>命令原意：write all<br>所在路径：所有用户<br>语法：wall [message]<br>功能描述：发广播信息</p>
+<h2 id="ping测试网络连通性"><a href="#ping测试网络连通性" class="headerlink" title="ping测试网络连通性"></a>ping测试网络连通性</h2><p>命令名称：ping<br>所在路径：/bin/ping<br>执行权限：所有用户<br>语法：ping 选项 IP地址<br>-c 指定发送次数<br>功能描述：测试网络连通性</p>
+<h2 id="ifconfig查看和设置网卡信息"><a href="#ifconfig查看和设置网卡信息" class="headerlink" title="ifconfig查看和设置网卡信息"></a>ifconfig查看和设置网卡信息</h2><p>命令名称：ifconfig<br>命令原意：interface configure<br>所在路径：/sbin/ifconfig<br>执行权限：root<br>语法：ifconfig 网卡名称 IP地址<br>功能描述：查看和设置网卡信息<br>范例：ifconfig eth0 192.168.8.250<br><strong>注意</strong><br>直接回车ifconfig<br>eth0是真实存在的网卡<br>lo是系统测试用的</p>
+<h2 id="mail查看发送电子邮件"><a href="#mail查看发送电子邮件" class="headerlink" title="mail查看发送电子邮件"></a>mail查看发送电子邮件</h2><p>命令名称：mail<br>所在路径：/bin/mail<br>执行权限：所有用户<br>语法：mail[用户名]<br>功能描述：查看发送电子邮件，ctrl+D结束<br><strong>注意</strong><br>mail命令直接查邮件</p>
+<h2 id="last列出目前与过去登入系统的用户信息"><a href="#last列出目前与过去登入系统的用户信息" class="headerlink" title="last列出目前与过去登入系统的用户信息"></a>last列出目前与过去登入系统的用户信息</h2><p>命令名称：last<br>所在路径：/usr/bin/last<br>执行权限：所有用户<br>语法：last<br>功能描述：列出目前与过去登入系统的用户信息<br><strong>注意</strong><br>该命令可以看计算机重启时间<br>lastlog 查看用户最后一次登陆</p>
+<h2 id="lastlog检查特定用户上次登陆的时间"><a href="#lastlog检查特定用户上次登陆的时间" class="headerlink" title="lastlog检查特定用户上次登陆的时间"></a>lastlog检查特定用户上次登陆的时间</h2><p>命令名称：lastlog<br>所在路径：/usr/bin/lastlog<br>执行权限：所有用户<br>语法：lastlog<br>功能描述：检查特定用户上次登陆的时间<br>例子：<br>lastlog<br>lastlog -u 502</p>
+<h2 id="traceroute显示数据包到主机间的路径"><a href="#traceroute显示数据包到主机间的路径" class="headerlink" title="traceroute显示数据包到主机间的路径"></a>traceroute显示数据包到主机间的路径</h2><p>命令名称：traceroute<br>所在路径：/bin/traceroute<br>执行权限：所有用户<br>语法：traceroute<br>功能描述：显示数据包到主机间的路径<br><strong>注意</strong><br>显示的是数据的路径123…<br>可以看哪里出问题</p>
+<h2 id="netstat显示网络相关信息"><a href="#netstat显示网络相关信息" class="headerlink" title="netstat显示网络相关信息"></a>netstat显示网络相关信息</h2><p>命令名称：netstat<br>所在路径：/bin/netstat<br>执行权限：所有用户<br>语法：netstat [选项]<br>功能描述：显示网络相关信息<br>选项：<br>-t：TCP协议<br>-u：UDP协议<br>-l：监听<br>-r：路由<br>-n：显示IP地址和端口号</p>
+<p>netstat -tlum 查看本机监听的端口<br>netstat -an 查看本机所有的网络连接（ESTABL ISHED为正在连接）<br>netstat -rn 查看本机路由表</p>
+<h2 id="setup配置网络（redhat特有）"><a href="#setup配置网络（redhat特有）" class="headerlink" title="setup配置网络（redhat特有）"></a>setup配置网络（redhat特有）</h2><p>命令名称：setup<br>所在路径：/usr/bin/setup<br>执行权限：root<br>语法：setup<br>功能描述：配置网络</p>
+<h2 id="挂载命令"><a href="#挂载命令" class="headerlink" title="挂载命令"></a>挂载命令</h2><p>命令名称：mount<br>命令位置：/bin/mount<br>执行权限：所有用户<br>命令语法：mount [-t 文件系统] 设备文件名 挂载点<br><strong>注意</strong><br>用来挂载外部设备<br>umout 卸载命令</p>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-09-09");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-09-09T12:49:32.000Z" itemprop="datePublished">2019-09-09</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+
+<a class="post-categories-list-item" href='/categories/Linux/'>Linux</a>
+
+</span>
+
+
+
+<span class="post-tags-list mt-2">
+
+
+<a class="post-tags-list-item" href="/tags/Linux/" rel="tag">#&nbsp;Linux</a>
+
+<a class="post-tags-list-item" href="/tags/网络命令/" rel="tag">#&nbsp;网络命令</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/09/09/Linux压缩解压命令/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux压缩解压命令</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://yoursite.com">Andy&#39;s Horizon</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>
